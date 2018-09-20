@@ -15,12 +15,24 @@
       <div class="jumbotron">
         <h1 class="display-4">WebApps de Atras Para Adelante</h1>
         <h3 class="display-9">EIP 2018 - Universidad Nacional de la Patagonia San Juan Bosco.</h3>
-        <p class="lead">Ejemplo 5: Entradas 1</p>
+        <p class="lead">Ejemplo 5: Manejo de Eventos</p>
       </div>
 
       <div class="container">
         <h2>{{ message }}</h2>
         <button v-on:click="reverseMessage" class="btn btn-primary">Reverse Message</button>
+
+        <h2>Tareas</h2>
+        <div class="form-inline">
+          <div class="form-group mx-sm-3 mb-2">
+            <input class="form-control" v-model="new_task">
+          </div>
+          <button class="btn btn-primary mb-2" v-on:click="createTask">Crear tarea</button>
+        </div>
+
+        <li v-for="(task, indice) of tasks">
+          {{ task.title }}
+        </li>
       </div>
     </div>
 

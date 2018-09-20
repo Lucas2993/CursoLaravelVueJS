@@ -1,6 +1,6 @@
 var app = new Vue({
   el: '#app',
   data: {
-    message: 'Bienvenidos!'
+    message: 'WebApps de atras para adelante'
   }
 })

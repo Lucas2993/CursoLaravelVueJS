@@ -19,8 +19,20 @@
       </div>
 
       <div class="container">
-        <h2>Mensaje: {{ message }}</h2>
-        <input v-model="message">
+        <form v-on:submit.prevent="createTask">
+          <div class="form-group">
+            <label>Tarea</label>
+            <input v-model="new_task" class="form-control" placeholder="Ingrese una tarea...">
+          </div>
+          <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+
+        <h1>Informacion Obtenida</h1>
+        <ol>
+          <li v-for="(task, index) of tasks">
+            {{ task.title }}
+          </li>
+        </ol>
       </div>
     </div>
 

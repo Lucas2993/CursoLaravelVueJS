@@ -15,15 +15,27 @@
       <div class="jumbotron">
         <h1 class="display-4">WebApps de Atras Para Adelante</h1>
         <h3 class="display-9">EIP 2018 - Universidad Nacional de la Patagonia San Juan Bosco.</h3>
-        <p class="lead">Ejemplo 4: Loops</p>
+        <p class="lead">Ejemplo 4: Listado de Elementos</p>
       </div>
 
       <div class="container">
+        <h1>Listado de ToDos</h1>
         <ol>
-          <li v-for="todo in todos">
+          <li v-for="(todo, index) of todos">
             {{ todo.text }}
           </li>
         </ol>
+
+        <h1>Utilizando template</h1>
+        <template v-for="(todo, index) in todos">
+          <p>{{ index + 1}}: {{ todo.text }}</p>
+          <hr>
+        </template>
+
+        <h1>Listado condicional</h1>
+        <li v-for="(task, indice) of tasks" v-if="task.pending">
+          {{ task.title }}
+        </li>
       </div>
     </div>
 

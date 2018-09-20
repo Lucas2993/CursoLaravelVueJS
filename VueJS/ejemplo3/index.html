@@ -15,11 +15,24 @@
       <div class="jumbotron">
         <h1 class="display-4">WebApps de Atras Para Adelante</h1>
         <h3 class="display-9">EIP 2018 - Universidad Nacional de la Patagonia San Juan Bosco.</h3>
-        <p class="lead">Ejemplo 3: Condiciones</p>
+        <p class="lead">Ejemplo 3: Mostrar u Ocultar Elementos</p>
       </div>
 
       <div class="container">
-        <h1 v-if="visible">{{ message }}</h1>
+        <h1>{{ message }}</h1>
+
+        <input type="radio" v-model="visible" v-bind:value="true">
+        <label>Mostrar</label>
+
+        <input type="radio" v-model="visible" v-bind:value="false">
+        <label>Ocultar</label>
+
+        <div v-if="visible">
+          <h2>Es visible!</h2>
+        </div>
+        <div v-else>
+          <h2>No es visible!</h2>
+        </div>
       </div>
     </div>
 
